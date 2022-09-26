@@ -1,4 +1,5 @@
 import Card from "./Card";
+import Head from "next/head";
 import { useEffect,useState } from "react"
 const Start = () => {
     const [data, setData] = useState(null);
@@ -25,8 +26,11 @@ const Start = () => {
   return (
     <div>
         <div>
-
-        <h2 className="fixed top-0 left-0 right-0 bg-white text-2xl">Your score is: {score}</h2>
+        <Head>
+        <title>Questions</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+        <h2 className="fixed top-0 left-0 right-0 bg-white text-3xl flex justify-center items-center ">Your score is: {score}</h2>
         <div className="flex flex-col gap-10">
 
         {data && data.results.map((obj)=>{
