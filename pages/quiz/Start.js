@@ -34,7 +34,7 @@ const Start = () => {
         <div className="flex flex-col gap-10">
 
         {data && data.results.map((obj)=>{
-            return <Card question={obj} score={score} setScore={setScore} />
+            return <Card key={obj.question} question={obj} score={score} setScore={setScore} />
         })}
         </div>
         </div>
