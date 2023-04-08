@@ -1,6 +1,6 @@
 import { useState } from "react"
 const { convert } = require('html-to-text');
-const Card = ({ question, score, setScore }) => {
+const Card = ({ question, setScore }) => {
 
     const [answer, setAnswer] = useState(null)
     const [correct, setCorrect] = useState("")
@@ -25,7 +25,7 @@ const Card = ({ question, score, setScore }) => {
 
                 <div className="flex items-start justify-start text-3xl text-white font-bold ">
 
-                    {question.category && ( <div> Category:{question.category} </div>)}
+                    {question?.category && ( <div> Category:{question?.category} </div>)}
                 </div>
 
                 <div>
@@ -37,6 +37,7 @@ const Card = ({ question, score, setScore }) => {
                 <div className="text-2xl">
 
                     {convert(question.question,{wordwrap:130})}
+
                 </div>
 
                 <div>

@@ -1,13 +1,10 @@
 import Navbar from "./Navbar"
-import { useState } from "react";
-import Card from "../pages/quiz/Card";
-import Start from "../pages/quiz/Start";
+
 import Link from "next/link";
 import Instructions from "./Instructions";
 import Head from "next/head";
 const Homepage = () => {
 
-    const [start, setStart] = useState(false)
 
     const url="https://source.unsplash.com/random/900×700/?landscape"
     return (
