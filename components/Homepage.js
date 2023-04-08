@@ -23,7 +23,7 @@ const Homepage = () => {
 
                 <Instructions />    
                 <Link  href="/quiz/Start" 
-                onClick={()=>setStart(!start)}><a className="bg-blue-600 hover:bg-blue-500 text-black-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded m-10 text-2xl">Start</a></Link>
+                ><a className="bg-blue-600 hover:bg-blue-500 text-black-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded m-10 text-2xl">Start</a></Link>
 
                 </div>
 
