@@ -31,45 +31,45 @@ const Card = ({ question, setScore }) => {
                 <div>
 
 
-                    <h1 className=" font-bold text-2xl">Difficulty: {question.difficulty}</h1>
+                    {question?.difficulty && (<h1 className=" font-bold text-2xl">Difficulty: {question?.difficulty}</h1>)}
 
                 </div>
                 <div className="text-2xl">
 
-                    {convert(question.question,{wordwrap:130})}
+                    {convert(question?.question,{wordwrap:130})}
 
                 </div>
 
                 <div>
-                    {question.type == "multiple" && <p className="text-2xl">Multiple Choice Question</p>}
-                    {question.type == "boolean" && <p>Boolean Question</p>}
+                    {question?.type == "multiple" && <p className="text-2xl">Multiple Choice Question</p>}
+                    {question?.type == "boolean" && <p>Boolean Question</p>}
                 </div>
 
                 <div>
-                    {question.type == "multiple" &&
+                    {question?.type == "multiple" &&
                         <div>
                             <div className="flex flex-row justify-center items-center gap-4 mb-6 cursor-pointer ">
 
-                                <input type="radio" name="options" value={question.incorrect_answers[0]}
+                                <input type="radio" name="options" value={question?.incorrect_answers[0]}
                                     onChange={(e) => setAnswer(e.target.value)} />
 
-                                {question.incorrect_answers[0]}
+                                {question?.incorrect_answers[0]}
 
 
-                                <input type="radio" name="options" value={question.incorrect_answers[1]}
+                                <input type="radio" name="options" value={question?.incorrect_answers[1]}
                                     onChange={(e) => setAnswer(e.target.value)} />
 
-                                {question.incorrect_answers[1]}
+                                {question?.incorrect_answers[1]}
 
-                                <input type="radio" name="options" value={question.incorrect_answers[2]}
+                                <input type="radio" name="options" value={question?.incorrect_answers[2]}
                                     onChange={(e) => setAnswer(e.target.value)} />
 
-                                {question.incorrect_answers[2]}
+                                {question?.incorrect_answers[2]}
 
 
-                                <input type="radio" name="options" value={question.correct_answer}
+                                <input type="radio" name="options" value={question?.correct_answer}
                                     onChange={(e) => setAnswer(e.target.value)} />
-                                {question.correct_answer}
+                                {question?.correct_answer}
                             </div>
                             <div className="flex flex-col justify-center items-center">
                                 <button class="bg-blue-600 text-black hover:bg-blue-500 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded "
@@ -82,15 +82,15 @@ const Card = ({ question, setScore }) => {
                         </div>
                     }
 
-                    {question.type == "boolean" &&
+                    {question?.type == "boolean" &&
                         <div>
                             <div className="flex gap-4 mb-4">
-                                <input type="radio" name="options" value={question.correct_answer}
+                                <input type="radio" name="options" value={question?.correct_answer}
                                     onChange={(e) => setAnswer(e.target.value)} />
-                                {question.correct_answer}
-                                <input type="radio" name="options" value={question.incorrect_answers[0]}
+                                {question?.correct_answer}
+                                <input type="radio" name="options" value={question?.incorrect_answers[0]}
                                     onChange={(e) => setAnswer(e.target.value)} />
-                                {question.incorrect_answers[0]}
+                                {question?.incorrect_answers[0]}
                             </div>
 
                             <div className="flex flex-col justify-center items-center">
@@ -114,7 +114,7 @@ const Card = ({ question, setScore }) => {
 
                 <div>
                     {submited && <div className="bg-white rounded-lg text-black text-2xl p-3 font-bold">Your answer is {correct=="true" ?"correct":"incorrect"}<p>
-                        The correct answer is {question.correct_answer}</p>
+                        The correct answer is {question?.correct_answer}</p>
                         </div>}
                 </div>
 
