@@ -25,7 +25,7 @@ const Card = ({ question, score, setScore }) => {
 
                 <div className="flex items-start justify-start text-3xl text-white font-bold ">
 
-                    Category:{question.category}
+                    {question.category && ( <div> Category:{question.category} </div>)}
                 </div>
 
                 <div>
